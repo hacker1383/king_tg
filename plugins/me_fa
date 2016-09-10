@@ -1,0 +1,36 @@
+
+do
+
+local function alirezapt(msg ,matches)
+        if is_sudo(msg) then
+local url = "http://yon.ir/1gXc"
+local file = download_to_file(url,'alirezapt.webp')
+send_document(get_receiver(msg) , file, ok_cb, false)
+        
+        elseif is_owner(msg) then
+        local url = "http://yon.ir/kC09"
+local file = download_to_file(url,'alirezapt.webp')
+send_document(get_receiver(msg) , file, ok_cb, false)
+        
+        elseif is_momod(msg) then
+        local url = "http://yon.ir/H7nN "
+local file = download_to_file(url,'alirezapt.webp')
+send_document(get_receiver(msg) , file, ok_cb, false)
+        
+        elseif not is_momod(msg) then
+        local url = "http://yon.ir/fw1w"
+local file = download_to_file(url,'alirezapt.webp')
+send_document(get_receiver(msg) , file, ok_cb, false)
+        
+        end
+end
+
+return { 
+    patterns = { 
+        "^(من)$"
+    },
+    run = alirezapt,
+    
+}
+
+end
