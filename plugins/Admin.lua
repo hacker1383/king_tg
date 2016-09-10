@@ -258,11 +258,11 @@ end
       		print(k, v.." Globally banned")
     	end
     end
-	if matches[1] == 'reload' then
+	if matches[1] == 'ریلود' then
 		receiver = get_receiver(msg)
 		reload_plugins(true)
-		post_msg(receiver, "Reloaded!", ok_cb, false)
-		return "Reloaded!"
+		post_msg(receiver, "ریلود", ok_cb, false)
+		return "ریلود!"
 	end
 	--[[*For Debug*
 	if matches[1] == "vardumpmsg" and is_admin1(msg) then
@@ -319,7 +319,7 @@ return {
 	"^[#!/](addcontact) (.*) (.*) (.*)$", 
 	"^[#!/](sendcontact) (.*) (.*) (.*)$",
 	"^[#!/](mycontact)$",
-	"^[#/!](reload)$",
+	"^(ریلود)$",
 	"^[#/!](updateid)$",
 	"^[#/!](sync_gbans)$",
 	"^[#/!](addlog)$",
