@@ -5,7 +5,7 @@ local rules = data[tostring(msg.to.id)]['rules']
 local about = data[tostring(msg.to.id)]['description']
 local hash = 'group:'..msg.to.id
 local group_bye = redis:hget(hash,'bye')
-if matches[1] == 'delbye' and not matches[2] and is_owner(msg) then 
+if matches[1] == 'حذف متن بای' and not matches[2] and is_owner(msg) then 
     
    redis:hdel(hash,'welcome')
         return 'متن خداحافظی پاک شد'
@@ -15,7 +15,7 @@ local url , res = http.request('http://api.gpmod.ir/time/')
 if res ~= 200 then return "No connection" end
 local jdat = json:decode(url)
 
-if matches[1] == 'setbye' and is_owner(msg) then
+if matches[1] == 'تنظیم متن بای' and is_owner(msg) then
 redis:hset(hash,'bye',matches[2])
         return 'متن خداحافظی تغییر یافت به : \n'..matches[2]
 end
@@ -48,8 +48,8 @@ return group_bye
 end
 return {
   patterns = {
-  "^[!#/](setbye) +(.*)$",
-  "^[!#/](delbye)$",
+  "^(تنظیم متن بای) +(.*)$",
+  "^(حذف متن بای)$",
   "^!!tgservice (chat_del_user)$",
   },
   run = run
